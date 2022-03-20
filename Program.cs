@@ -1,7 +1,4 @@
-﻿
-
-
- class Program
+﻿ class Program
     {
         static void Main(string[] args)
         {
@@ -12,22 +9,14 @@
            qtdAlunos = int.Parse(Console.ReadLine());
 
            Console.WriteLine("Primeiro Bimestre");
-           var notasPrimBim = PreecherVetor(qtdAlunos);
+           var notasPrimBm = PreecherVetor(qtdAlunos);
 
            Console.WriteLine("Segundo Bimestre");
            var notasSegBim = PreecherVetor(qtdAlunos);
 
-            Console.WriteLine("Terceiro Bimestre");
-           var notasTerBim = PreecherVetor(qtdAlunos);
-
-            Console.WriteLine("Quarto Bimestre");
-           var notasQuartBim = PreecherVetor(qtdAlunos);
-
-           ImprimirNotas(notasPrimBim);
+           ImprimirNotas(notasPrimBm);
            ImprimirNotas(notasSegBim);
-           ImprimirNotas(notasTerBim);
-           ImprimirNotas(notasQuartBim);
-           ImprimirMedias(notasPrimBim, notasSegBim, notasTerBim, notasQuartBim);
+           ImprimirMedias(notasPrimBm, notasSegBim);
            
         }
 
@@ -53,10 +42,15 @@
             Console.WriteLine();
         }
 
-        static void ImprimirMedias(float[] notasPrimBim, float[] notasSegBim, float []notasTerBim, float[] notasQuartBim)
+        static  void ImprimirMedias(float[] notasPrimBim, float[] notasSegBim)
         {
-
+                for (int i = 0; i < notasPrimBim.Length; i++)
+                {
+                    
+                   Console.WriteLine();
+                    Console.WriteLine($" a média  do {i+1}º aluno {(notasPrimBim[i] + notasSegBim[i]) /2} ");
+                    Console.WriteLine(); 
+                }
         }
 
     }
-
